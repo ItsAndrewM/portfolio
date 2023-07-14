@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import GlobalStyles from "./GlobalStyles";
+import GlobalStyles from "../GlobalStyles";
 
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Error from "./components/Error";
-import Experience from "./components/Experience";
-import Home from "./components/Home";
-import Work from "./components/Work";
-import Navbar from "./components/Navbar";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Error from "./pages/Error";
+import Experience from "./pages/Experience";
+import Home from "./pages/Home";
+import Work from "./pages/Work";
+import Navbar from "../components/Navbar";
 
 const App = () => {
   return (
