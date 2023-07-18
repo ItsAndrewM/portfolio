@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import GlobalStyles from "../GlobalStyles";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
+import GlobalStyles from "./GlobalStyles";
 
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -7,7 +7,7 @@ import Error from "./pages/Error";
 import Experience from "./pages/Experience";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
-import Navbar from "../components/Navbar";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
@@ -24,6 +24,6 @@ const App = () => {
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;
