@@ -1,36 +1,54 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import styled from "styled-components/macro";
+import { menuItems } from "../data/menuItems"
+import { useLocation } from "react-router-dom";
+import NavbarItems from "./NavbarItems";
 
 const Navbar = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
+  const location = useLocation();
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    let previousScrollY = 0;
-    let currentScrollY = 0;
+    window.addEventListener("scroll", handleScroll);
 
-    window.addEventListener("scroll", (e) => {
-      currentScrollY = window.pageYOffset;
-
-      if (previousScrollY - currentScrollY < 0) {
-        setShow(false);
-      } else if (previousScrollY - currentScrollY > 0) {
-        setShow(true);
-      }
-
-      previousScrollY = currentScrollY;
-    });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (location.pathname === "/") {
+      if (offset > 200) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    } else {
+      if (offset > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    }
+  };
+
   return (
-    <Wrapper style={{ top: !show ? "0px" : "-50px" }}>
+    <Wrapper style={{ position: scrolled ? "fixed" : "", top: scrolled ? "0" : "", }}>
+
       <OrderList>
-        <OrderedListItem>About</OrderedListItem>
-        <OrderedListItem>Experience</OrderedListItem>
-        <OrderedListItem>Work</OrderedListItem>
-        <OrderedListItem>Contact</OrderedListItem>
+        {menuItems.map((menu, index) => {
+          return (
+            <NavbarItems
+              items={menu}
+              key={index}
+            />
+          );
+        })}
       </OrderList>
-      <ResumeButton>Resume</ResumeButton>
+      {/* <ResumeButton>Resume</ResumeButton> */}
     </Wrapper>
   );
 };
@@ -38,9 +56,10 @@ const Navbar = () => {
 const Wrapper = styled.div`
   border: 1px solid red;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   width: 100%;
+  gap: 5em;
 `;
 
 const ResumeButton = styled.button`

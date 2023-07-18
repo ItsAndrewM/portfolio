@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import styled from "styled-components";
-import Test from "./Test";
 import { HashLink } from "react-router-hash-link";
 
 const Home = () => {
@@ -9,7 +8,6 @@ const Home = () => {
       <Wrapper>
         <HashLink to="#test">This is a link</HashLink>
       </Wrapper>
-      <Test />
     </Fragment>
   );
 };

@@ -1,6 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const { handleGetPinnedRepos } = require('./handlers/handleGetPinnedRepos');
 const port = 8000;
 
 express()
@@ -15,6 +16,8 @@ express()
             message: 'hello world'
         });
     })
+
+    .get('/username/:username', handleGetPinnedRepos)
 
     .listen(port, () => {
         console.log(`example app listening on port ${port}`)
