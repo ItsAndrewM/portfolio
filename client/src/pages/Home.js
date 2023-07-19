@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { HashLink } from "react-router-hash-link";
 
 const Home = () => {

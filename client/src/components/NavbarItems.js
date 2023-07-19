@@ -1,5 +1,5 @@
 import { HashLink } from "react-router-hash-link";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const NavbarItems = ({ items }) => {
 
@@ -11,7 +11,6 @@ const NavbarItems = ({ items }) => {
 };
 
 const Li = styled.li`
-
 
 `;
 

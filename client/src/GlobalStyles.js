@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components/macro";
 import FugazOneRegular from "./fonts/FugazOne-Regular.ttf"
 import LoraBold from "./fonts/Lora-Bold.ttf"
 import RobotoRegular from "./fonts/Roboto-Regular.ttf"
@@ -29,6 +29,14 @@ export default createGlobalStyle`
         --body-font-family: 'Roboto Regular';
         --user-img-width: 120px;
     }
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
 
 
     html, body, div, span, applet, object, iframe,
@@ -73,12 +81,12 @@ export default createGlobalStyle`
     }
     h1, h2, h3 {
         color: var(--primary-color);
-        font-family: var(--heading-font-family);
+        /* font-family: var(--heading-font-family); */
         font-weight: normal;
     }
     p, button {
         color: var(--primary-color);
-        font-family: var(--body-font-family);
+        /* font-family: var(--body-font-family); */
     }
     h2 {
       font-size: 28px;

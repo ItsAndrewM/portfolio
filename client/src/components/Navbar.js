@@ -20,6 +20,7 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
+    console.log(offset)
     if (location.pathname === "/") {
       if (offset > 200) {
         setScrolled(true);
@@ -76,6 +77,7 @@ const OrderList = styled.ol`
   list-style-type: decimal-leading-zero;
   list-style-position: outside;
   color: white;
+  gap: 2em;
 `;
 
 const OrderedListItem = styled.li`
