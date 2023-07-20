@@ -1,43 +1,22 @@
 import { createGlobalStyle } from "styled-components/macro";
-import FugazOneRegular from "./fonts/FugazOne-Regular.ttf"
-import LoraBold from "./fonts/Lora-Bold.ttf"
-import RobotoRegular from "./fonts/Roboto-Regular.ttf"
 
 export default createGlobalStyle`
-    @font-face {
-        font-family: 'Fugaz One Regular';
-        src: url(${FugazOneRegular}) format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Lora Bold';
-        src: url(${LoraBold}) format('truetype');
-    }
-
-    @font-face {
-        font-family: 'Roboto Regular';
-        src: url(${RobotoRegular}) format('truetype');
-    }
+    
     :root {
-        --primary-color: #FFFFFF;
-        --accent-primary-color: #1EBBD7;
-        --accent-secondary-color: #70d8eb;
-        --page-horizontal-padding: 20px;
-        --header-height: 50px;
-        --max-content-width: 1200px;
-        --heading-font-family: 'Fugaz One Regular';
-        --body-font-family: 'Roboto Regular';
-        --user-img-width: 120px;
+        --white: #FFFFFF;
+        --font-sm: 16px;
+        --font-med: 28px;
+        --font-lg: 32px;
+        --body-font-family: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono','Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro','Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+        --gap-sm: 10px;
+        --gap-md: 16px;
+        --gap-lg: 24px;
+        --gap-xl: 36px;
+        --green: #64ffda;
+        --grey: #8892b0;
+        --blue: #03001C;
+        --green-tint: rgba(100,255,218,0.1);
     }
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
 
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -58,7 +37,7 @@ body {
         font-size: 100%;
         vertical-align: baseline;
         box-sizing: border-box;
-        background-color: #03001C;
+        background-color: var(--blue);
     }
     /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure,
@@ -80,15 +59,28 @@ body {
         content: none;
     }
     h1, h2, h3 {
-        color: var(--primary-color);
-        /* font-family: var(--heading-font-family); */
-        font-weight: normal;
+        color: var(--white);
+        font-family: var(--body-font-family);
+        font-size: clamp(40px, 8vw, 80px)
     }
-    p, button {
-        color: var(--primary-color);
-        /* font-family: var(--body-font-family); */
+    p, a, li {
+        color: var(--grey);
+        font-family: var(--body-font-family);
+        font-size: var(--font-sm);
+        line-height: 1.5;
     }
-    h2 {
-      font-size: 28px;
+    button {
+        width: 15em;
+        height: 4em;
+        background-color: var(--blue);
+        border: 1px solid var(--green);
+        font-family: var(--body-font-family);
+        font-size: 16px;
+        color: var(--green);
+        transition: .3s;
+        &:hover {
+            background-color: var(--green-tint);
+            cursor: pointer;
+        }
     }
 `;

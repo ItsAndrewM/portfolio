@@ -1,21 +1,23 @@
 import { Fragment } from "react";
 import styled from "styled-components/macro";
 import { HashLink } from "react-router-hash-link";
+import Bio from "../components/Bio";
+import About from "../components/About";
 
 const Home = () => {
   return (
-    <Fragment>
-      <Wrapper>
-        <HashLink to="#test">This is a link</HashLink>
-      </Wrapper>
-    </Fragment>
+    <Wrapper>
+      <Bio />
+      <About />
+    </Wrapper>
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
   max-width: 100vw;
   width: 100vw;
   min-height: 100vh;
+  height: 100vh;
 `;
 
 export default Home;
