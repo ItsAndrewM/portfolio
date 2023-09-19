@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import styled from "styled-components/macro";
-import { menuItems } from "../data/menuItems"
+import { menuItems } from "../data/menuItems";
 import { useLocation } from "react-router-dom";
 import NavbarItems from "./NavbarItems";
 
@@ -20,7 +20,7 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    console.log(offset)
+    console.log(offset);
     if (location.pathname === "/") {
       if (offset > 200) {
         setScrolled(true);
@@ -37,16 +37,12 @@ const Navbar = () => {
   };
 
   return (
-    <Wrapper style={{ position: scrolled ? "fixed" : "", top: scrolled ? "0" : "", }}>
-
+    <Wrapper
+      style={{ position: scrolled ? "fixed" : "", top: scrolled ? "0" : "" }}
+    >
       <OrderList>
         {menuItems.map((menu, index) => {
-          return (
-            <NavbarItems
-              items={menu}
-              key={index}
-            />
-          );
+          return <NavbarItems items={menu} key={index} />;
         })}
       </OrderList>
       {/* <ResumeButton>Resume</ResumeButton> */}
@@ -55,7 +51,6 @@ const Navbar = () => {
 };
 
 const Wrapper = styled.div`
-  border: 1px solid red;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,7 +72,8 @@ const OrderList = styled.ol`
   list-style-type: decimal-leading-zero;
   list-style-position: outside;
   color: white;
-  gap: 2em;
+  gap: 5em;
+  width: 100%;
 `;
 
 const OrderedListItem = styled.li`

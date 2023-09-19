@@ -18,6 +18,16 @@ export default createGlobalStyle`
         --green-tint: rgba(100,255,218,0.1);
     }
 
+    html, body {
+
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+    }
+
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,

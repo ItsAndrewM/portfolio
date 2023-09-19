@@ -4,6 +4,8 @@ import { HashLink } from "react-router-hash-link";
 import Bio from "../components/Bio";
 import About from "../components/About";
 
+//https://brittanychiang.com/
+
 const Home = () => {
   return (
     <Wrapper>
