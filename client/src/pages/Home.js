@@ -1,6 +1,4 @@
-import { Fragment } from "react";
 import styled from "styled-components/macro";
-import { HashLink } from "react-router-hash-link";
 import Bio from "../components/Bio";
 import About from "../components/About";
 
